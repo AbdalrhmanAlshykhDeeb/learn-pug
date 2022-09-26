@@ -1,29 +1,41 @@
+include includes/myvar
+include includes/mymixins
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        block titleContent 
+            title Document
+
         include includes/style.pug
     body 
-    include includes/myvar.pug
         .osama 
         #osama
+        block aboutPage 
+            main main for me page
+        block testingContent
+            .main This is content Frome Main Page
         div(class="main-container", id="main")
+            +feature('Cheap Price')
+            +feature('Cheap Price 2')
+            +feature('Cheap Price 3')
             h2(class="title") This is skills
             ul 
                 li: a(href ='#')
-                li Lorem ipsum 
-                li php 
-                li css 
-                li javascript
-                b text 
+                li Lorem ipsum \#{osama}
+                li php #{themName.toLowerCase()}
+                li php #{'#{themName}'}
+                li css  !{themName.toUpperCase()}
+                li javascript #{'}'}!
+                    b  text 
                 li
                     a link
-            
+            +skillList
             - var className = 'asd'        
             p.main-paragraph This is paragraph
             p#main-paragraph This is paragraph #{number}
+            p.inter This Is Intrepolation #[b Test]
             |  hello  kbvz 
             |
             |
@@ -55,6 +67,18 @@ html(lang="en")
                 input(class="f-c " + className, type="text", name="subj")
                 br
                 button(style={'background-color': 'red', 'color': 'white'}) send 
-                bytton rest
+                button rest
         
+            - var friends = 100
+                case friends
+                    when 0
+                        p you have no friends
+                    when 1
+                        p you have a friend
+                    default
+                        p you have #{friends} friends
+
+        script(src="js/javascript.js") 
+        script(src="js/jqury.js") 
+        script(src="js/bootstrap.js") 
         
