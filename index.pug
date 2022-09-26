@@ -1,0 +1,60 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include includes/style.pug
+    body 
+    include includes/myvar.pug
+        .osama 
+        #osama
+        div(class="main-container", id="main")
+            h2(class="title") This is skills
+            ul 
+                li: a(href ='#')
+                li Lorem ipsum 
+                li php 
+                li css 
+                li javascript
+                b text 
+                li
+                    a link
+            
+            - var className = 'asd'        
+            p.main-paragraph This is paragraph
+            p#main-paragraph This is paragraph #{number}
+            |  hello  kbvz 
+            |
+            |
+            . 
+                ukuyf
+                kshvicv;vsc 
+                bbbbb
+            div= 'This is <strong> tag </sgtrong> code'
+            div!= 'This is <strong> tag </sgtrong> code'
+            //- this is loop foor 
+            ul
+                - for(var x = 0; x < 40; x++)
+                    li item #{x + 1}
+            - var z = 1;
+            //- this is while loop
+            ul 
+                while z <= 20
+                    li= z++ 
+            //- this is each loop
+            each val in ['Aahmed', 'kacbk', 'kjabci', 'fivre', 'foue']
+                p= val
+            each val, index in ['Aahmed', 'kacbk', 'kjabci', 'fivre', 'foue']
+                p=index + " " + val    
+            form 
+                input(class="f-c", type="text", name="user")
+                br
+                input(class="f-c " + className, type="email", name="email")
+                br
+                input(class="f-c " + className, type="text", name="subj")
+                br
+                button(style={'background-color': 'red', 'color': 'white'}) send 
+                bytton rest
+        
+        
